@@ -185,7 +185,7 @@ CommunityTypes.NoiseSensor = function (displayName, subtype) {
   Service.call(this, displayName, CommunityTypes.NoiseLevelSensor.UUID, subtype);
 
   // Required Characteristics
-  this.addCharacteristic(CommunityTypes.PowerMeterDevice);
+  this.addCharacteristic(CommunityTypes.NoiseDetected);
 
   // Optional Characteristics
   this.addOptionalCharacteristic(CommunityTypes.NoiseLevel);
