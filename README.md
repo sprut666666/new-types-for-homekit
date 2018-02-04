@@ -29,3 +29,4 @@ Let's develop and expand this library.
 - New service PowerMeter with characteristics: Volts, Amperes, Watts, VoltAmperes, KilowattHours, KilowattVoltAmpereHour
 - New service AtmosphericPressureSensor with characteristics: AtmosphericPressureLevel
 - New service NoiseSensor with characteristics: NoiseDetected, NoiseLevel
+- New service NoiseLevelSensor with characteristics: NoiseLevel
