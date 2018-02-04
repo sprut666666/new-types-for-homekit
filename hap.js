@@ -200,5 +200,21 @@ CommunityTypes.NoiseSensor = function (displayName, subtype) {
 CommunityTypes.NoiseSensor.UUID = '00000003-0000-2000-8000-0026BB765291';
 inherits(CommunityTypes.NoiseSensor, Service);
 
+CommunityTypes.NoiseLevelSensor = function (displayName, subtype) {
+  Service.call(this, displayName, CommunityTypes.NoiseLevelSensor.UUID, subtype);
+
+  // Required Characteristics
+  this.addCharacteristic(CommunityTypes.NoiseLevel);
+
+  // Optional Characteristics standard
+  this.addOptionalCharacteristic(Characteristic.StatusActive);
+  this.addOptionalCharacteristic(Characteristic.StatusFault);
+  this.addOptionalCharacteristic(Characteristic.StatusLowBattery);
+  this.addOptionalCharacteristic(Characteristic.StatusTampered);
+  this.addOptionalCharacteristic(Characteristic.Name);
+};
+CommunityTypes.NoiseLevelSensor.UUID = '00000004-0000-2000-8000-0026BB765291';
+inherits(CommunityTypes.NoiseLevelSensor, Service);
+
 return CommunityTypes;
 };

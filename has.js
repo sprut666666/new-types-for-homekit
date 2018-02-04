@@ -199,3 +199,40 @@ function NoiseSensor(ID, characteristics, isHidden, isPrimary, linkedServices, c
     return service;
 }
 exports.NoiseSensor = NoiseSensor;
+function NoiseLevelSensor(ID, characteristics, isHidden, isPrimary, linkedServices, checkCharacteristics) {
+    if (isHidden === void 0) { isHidden = false; }
+    if (isPrimary === void 0) { isPrimary = false; }
+    if (linkedServices === void 0) { linkedServices = []; }
+    if (checkCharacteristics === void 0) { checkCharacteristics = true; }
+    var service = new HAS.Service(ID, '00000004-0000-2000-8000-0026BB765291', isHidden, isPrimary, linkedServices);
+    var requiredCharacteristics = ['00000008-000C-2000-8000-0026BB765291'];
+    var optionalCharacteristics = ['00000075-0000-1000-8000-0026BB765291', '00000077-0000-1000-8000-0026BB765291', '00000079-0000-1000-8000-0026BB765291', '0000007A-0000-1000-8000-0026BB765291', '00000023-0000-1000-8000-0026BB765291'];
+    if (!checkCharacteristics) {
+        for (var _i = 0, characteristics_100 = characteristics; _i < characteristics_100.length; _i++) {
+            var characteristic = characteristics_100[_i];
+            service.addCharacteristic(characteristic);
+        }
+        return service;
+    }
+    for (var _a = 0, requiredCharacteristics_34 = requiredCharacteristics; _a < requiredCharacteristics_34.length; _a++) {
+        var type = requiredCharacteristics_34[_a];
+        var OK = false;
+        for (var _b = 0, characteristics_101 = characteristics; _b < characteristics_101.length; _b++) {
+            var characteristic = characteristics_101[_b];
+            if (characteristic.getType() == type) {
+                OK = true;
+                break;
+            }
+        }
+        if (!OK)
+            throw new Error(type + 'is required for this service: ' + ID);
+    }
+    for (var _c = 0, characteristics_102 = characteristics; _c < characteristics_102.length; _c++) {
+        var characteristic = characteristics_102[_c];
+        if (requiredCharacteristics.indexOf(characteristic.getType()) <= -1 && optionalCharacteristics.indexOf(characteristic.getType()) <= -1)
+            throw new Error(ID + ' can not contain ' + characteristic.getType());
+        service.addCharacteristic(characteristic);
+    }
+    return service;
+}
+exports.NoiseLevelSensor = NoiseLevelSensor;
