@@ -144,9 +144,6 @@ CommunityTypes.NoiseDetected = function() {
 CommunityTypes.PowerMeter = function (displayName, subtype) {
   Service.call(this, displayName, CommunityTypes.AtmosphericPressureSensor.UUID, subtype);
 
-  // Required Characteristics
-  // this.addCharacteristic(CommunityTypes.PowerMeterDevice);
-
   // Optional Characteristics
   this.addOptionalCharacteristic(CommunityTypes.Volts);
   this.addOptionalCharacteristic(CommunityTypes.Amperes);
