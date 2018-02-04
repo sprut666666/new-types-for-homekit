@@ -16,7 +16,6 @@ XXXXXXXX-0000-1000-8000-0026BB765291 - Standard apple key for services and chara
 We use
 
 XXXXXXXX-0000-2000-8000-0026BB765291 - For services
-
 XXXXXXXX-000C-1000-8000-0026BB765291 - For characteristics
 
 Let's develop and expand this library.
