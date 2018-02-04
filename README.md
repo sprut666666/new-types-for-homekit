@@ -17,7 +17,7 @@ We use
 
 #### XXXXXXXX-0000-2000-8000-0026BB765291 - For services
 
-#### XXXXXXXX-000C-1000-8000-0026BB765291 - For characteristics
+#### XXXXXXXX-000C-2000-8000-0026BB765291 - For characteristics
 
 Let's develop and expand this library.
 
