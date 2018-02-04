@@ -1,0 +1,28 @@
+{
+  "name": "NewTypesForHomeKit",
+  "version": "1.0.0",
+  "description": "A new standard for missing types in Apple HomeKit for HomeBridge HAP & HAS - NodeJS.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sprut666666/NewTypesForHomeKit.git"
+  },
+  "preferGlobal": true,
+  "keywords": [
+    "HAP",
+    "HAP-NodeJS",
+    "Siri",
+    "HomeKit",
+    "Homebridge"
+  ],
+  "dependencies": {
+  },
+  "author": "Sprut <Sprut.1@me.com> (https://github.com/sprut666666)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sprut666666/NewTypesForHomeKit/issues"
+  },
+  "homepage": "https://github.com/sprut666666/NewTypesForHomeKit#readme"
+}
