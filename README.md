@@ -2,7 +2,7 @@
 
 Hello dear developer community. Let's clean up the new types of HomeKit.
 While Apple has forgotten about our needs, everyone adds their services and characteristics as he wants.
-At the same time, in every project or even a HometKit-rady device - completely different data types and storage locations can be used - for the same kinds of data.
+At the same time, in every project or even a HometKit-Ready device - completely different data types and storage locations can be used - for the same kinds of data.
 As a result, it can not be controlled. Please let's stick to a single standard until Apple remembers us.
 
 ---
