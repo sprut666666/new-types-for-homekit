@@ -1,6 +1,6 @@
 {
   "name": "new-types-for-homekit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A new standard for missing types in Apple HomeKit for HomeBridge HAP & HAS - NodeJS.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,6 +13,8 @@
   "keywords": [
     "HAP",
     "HAP-NodeJS",
+    "HAS",
+    "HAS-NodeJS",
     "Siri",
     "HomeKit",
     "Homebridge"

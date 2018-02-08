@@ -98,8 +98,8 @@ CommunityTypes.KilowattVoltAmpereHour = function() {
 CommunityTypes.KilowattVoltAmpereHour.UUID = '00000006-000C-2000-8000-0026BB765291';
 inherits(CommunityTypes.KilowattVoltAmpereHour, Characteristic);
 
-CommunityTypes.AtmosphericPressureLevel = function () {
-  Characteristic.call(this, 'Barometric Pressure', CommunityTypes.AtmosphericPressureLevel.UUID);
+CommunityTypes.CurrentAtmosphericPressure = function () {
+  Characteristic.call(this, 'Barometric Pressure', CommunityTypes.CurrentAtmosphericPressure.UUID);
   this.setProps({
     format:   Characteristic.Formats.FLOAT,
     unit:     "mbar",
@@ -110,11 +110,11 @@ CommunityTypes.AtmosphericPressureLevel = function () {
   });
   this.value = this.getDefaultValue();
 };
-CommunityTypes.AtmosphericPressureLevel.UUID = '00000007-000C-2000-8000-0026BB765291';
-inherits(CommunityTypes.AtmosphericPressureLevel, Characteristic);
+CommunityTypes.CurrentAtmosphericPressure.UUID = '00000007-000C-2000-8000-0026BB765291';
+inherits(CommunityTypes.CurrentAtmosphericPressure, Characteristic);
 
-CommunityTypes.NoiseLevel = function () {
-  Characteristic.call(this, 'Noise Level', CommunityTypes.NoiseLevel.UUID);
+CommunityTypes.CurrentNoiseLevel = function () {
+  Characteristic.call(this, 'Noise Level', CommunityTypes.CurrentNoiseLevel.UUID);
   this.setProps({
     format:   Characteristic.Formats.FLOAT,
     unit:     "dB",
@@ -125,8 +125,8 @@ CommunityTypes.NoiseLevel = function () {
   });
   this.value = this.getDefaultValue();
 };
-CommunityTypes.NoiseLevel.UUID = '00000008-000C-2000-8000-0026BB765291';
-inherits(CommunityTypes.NoiseLevel, Characteristic);
+CommunityTypes.CurrentNoiseLevel.UUID = '00000008-000C-2000-8000-0026BB765291';
+inherits(CommunityTypes.CurrentNoiseLevel, Characteristic);
 
 CommunityTypes.NoiseDetected = function() {
    Characteristic.call(this, "Noise Detected", CommunityTypes.Timestamp.UUID);
@@ -138,6 +138,22 @@ CommunityTypes.NoiseDetected = function() {
  };
  CommunityTypes.NoiseDetected.UUID = '00000009-000C-2000-8000-0026BB765291';
  inherits(CommunityTypes.NoiseDetected, Characteristic);
+
+ CommunityTypes.CurrentUltraviolet = function() {
+   Characteristic.call(this, 'Ultraviolet in UV index (UVI)', CommunityTypes.CurrentUltraviolet.UUID);
+   this.setProps({
+     format:   Characteristic.Formats.FLOAT,
+     unit:     "UVI",
+     minValue: 0,
+     maxValue: 65535,
+     minStep:  0.01,
+     perms:    [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY]
+   });
+   this.value = this.getDefaultValue();
+ };
+ CommunityTypes.CurrentUltraviolet.UUID = '00000010-000C-2000-8000-0026BB765291';
+ inherits(CommunityTypes.CurrentUltraviolet, Characteristic);
+
 
 // Service
 
@@ -166,7 +182,7 @@ CommunityTypes.AtmosphericPressureSensor = function (displayName, subtype) {
   Service.call(this, displayName, CommunityTypes.AtmosphericPressureSensor.UUID, subtype);
 
   // Required Characteristics
-  this.addCharacteristic(CommunityTypes.AtmosphericPressureLevel);
+  this.addCharacteristic(CommunityTypes.CurrentAtmosphericPressure);
 
   // Optional Characteristics standard
   this.addOptionalCharacteristic(Characteristic.StatusActive);
@@ -185,7 +201,7 @@ CommunityTypes.NoiseSensor = function (displayName, subtype) {
   this.addCharacteristic(CommunityTypes.NoiseDetected);
 
   // Optional Characteristics
-  this.addOptionalCharacteristic(CommunityTypes.NoiseLevel);
+  this.addOptionalCharacteristic(CommunityTypes.CurrentNoiseLevel);
 
   // Optional Characteristics standard
   this.addOptionalCharacteristic(Characteristic.StatusActive);
@@ -201,7 +217,7 @@ CommunityTypes.NoiseLevelSensor = function (displayName, subtype) {
   Service.call(this, displayName, CommunityTypes.NoiseLevelSensor.UUID, subtype);
 
   // Required Characteristics
-  this.addCharacteristic(CommunityTypes.NoiseLevel);
+  this.addCharacteristic(CommunityTypes.CurrentNoiseLevel);
 
   // Optional Characteristics standard
   this.addOptionalCharacteristic(Characteristic.StatusActive);
@@ -212,6 +228,22 @@ CommunityTypes.NoiseLevelSensor = function (displayName, subtype) {
 };
 CommunityTypes.NoiseLevelSensor.UUID = '00000004-0000-2000-8000-0026BB765291';
 inherits(CommunityTypes.NoiseLevelSensor, Service);
+
+CommunityTypes.UltravioletSensor = function (displayName, subtype) {
+  Service.call(this, displayName, CommunityTypes.NoiseLevelSensor.UUID, subtype);
+
+  // Required Characteristics
+  this.addCharacteristic(CommunityTypes.CurrentUltraviolet);
+
+  // Optional Characteristics standard
+  this.addOptionalCharacteristic(Characteristic.StatusActive);
+  this.addOptionalCharacteristic(Characteristic.StatusFault);
+  this.addOptionalCharacteristic(Characteristic.StatusLowBattery);
+  this.addOptionalCharacteristic(Characteristic.StatusTampered);
+  this.addOptionalCharacteristic(Characteristic.Name);
+};
+CommunityTypes.UltravioletSensor.UUID = '00000005-0000-2000-8000-0026BB765291';
+inherits(CommunityTypes.UltravioletSensor, Service);
 
 return CommunityTypes;
 };

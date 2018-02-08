@@ -25,6 +25,10 @@ Let's develop and expand this library.
 
 ### Changelog
 
+#### 1.0.1
+- Fix names for Apple way: AtmosphericPressureLevel -> CurrentAtmosphericPressure, NoiseLevel -> CurrentNoiseLevel
+- New service UltravioletSensor with characteristics: CurrentUltraviolet
+
 #### 1.0.0
 - New service PowerMeter with characteristics: Volts, Amperes, Watts, VoltAmperes, KilowattHours, KilowattVoltAmpereHour
 - New service AtmosphericPressureSensor with characteristics: AtmosphericPressureLevel
