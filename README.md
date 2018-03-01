@@ -1,6 +1,6 @@
 # New types for Apple HomeKit
 
-[App support lib: HomeCenter for HomeKit](https://itunes.apple.com/ru/app/homecenter-for-homekit/id1329662539?mt=8)
+### App support lib: [HomeCenter for HomeKit](https://itunes.apple.com/ru/app/homecenter-for-homekit/id1329662539?mt=8)
 
 Hello dear developer community. Let's clean up the new types of HomeKit.
 While Apple has forgotten about our needs, everyone adds their services and characteristics as he wants.
