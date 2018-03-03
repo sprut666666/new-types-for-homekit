@@ -3,9 +3,9 @@
 ### App support lib: [HomeCenter for HomeKit](https://itunes.apple.com/ru/app/homecenter-for-homekit/id1329662539?mt=8)
 ![ScreenShot](https://github.com/sprut666666/new-types-for-homekit/raw/master/ScreenShot.png)
 
-Hello dear developer community. Let's clean up the new types of HomeKit.
+Hello dear developer community. Let's clean up the new types of Apple HomeKit.
 While Apple has forgotten about our needs, everyone adds their services and characteristics as he wants.
-At the same time, in every project or even a HometKit-Ready device - completely different data types and storage locations can be used - for the same kinds of data.
+At the same time, in every project or even a Apple HomeKit-Ready device - completely different data types and storage locations can be used - for the same kinds of data.
 As a result, it can not be controlled. Please let's stick to a single standard until Apple remembers us.
 
 ---
